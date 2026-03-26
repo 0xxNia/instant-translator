@@ -61,6 +61,8 @@ Browser extension for instant translation of selected text using DeepL API.
 
 ## Contributing
 
+Please review `CONTRIBUTING.md` before opening issues or pull requests.
+
 1. Fork the repository
 2. Create a feature branch:
    ```bash
@@ -76,6 +78,10 @@ Browser extension for instant translation of selected text using DeepL API.
    - clear summary
    - screenshots/GIF for UI changes
    - test steps
+
+## Code of Conduct
+
+Please read `CODE_OF_CONDUCT.md` before participating in discussions or reviews.
 
 ## Roadmap
 
