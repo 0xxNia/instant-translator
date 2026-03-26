@@ -1,0 +1,66 @@
+.ist-tooltip {
+  position: absolute;
+  z-index: 2147483647;
+  width: min(420px, calc(100vw - 16px));
+  max-height: 280px;
+  overflow: auto;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #171717;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.ist-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.ist-source {
+  color: #5e5e5e;
+  margin-bottom: 8px;
+}
+
+.ist-separator {
+  height: 1px;
+  background: #efefef;
+  margin-bottom: 8px;
+}
+
+.ist-translation {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.ist-error {
+  color: #c81d25;
+}
+
+.ist-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ist-controls button {
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #222222;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.ist-controls button:hover {
+  background: #f1f1f1;
+}
