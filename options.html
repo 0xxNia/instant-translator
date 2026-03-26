@@ -90,6 +90,21 @@
         <label for="enabled" style="margin: 0; font-weight: 500">Enable instant auto-translation</label>
       </div>
 
+      <label for="notionToken">Notion integration token</label>
+      <input id="notionToken" type="password" placeholder="Enter Notion internal integration token" />
+      <div class="hint">Create it at notion.so/my-integrations and keep it private.</div>
+
+      <label for="notionDatabaseId">Notion database ID</label>
+      <input id="notionDatabaseId" type="text" placeholder="Paste target database ID" />
+      <div class="hint">Share the database with your integration before saving.</div>
+
+      <div class="row inline">
+        <input id="notionEnabled" type="checkbox" />
+        <label for="notionEnabled" style="margin: 0; font-weight: 500"
+          >Enable save to Notion by hotkey (Cmd/Ctrl+Shift+Q)</label
+        >
+      </div>
+
       <button id="saveBtn" type="button">Save settings</button>
       <div class="status" id="status"></div>
     </main>

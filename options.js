@@ -1,12 +1,18 @@
 const DEFAULTS = {
   apiKey: "",
   targetLang: "RU",
-  enabled: true
+  enabled: true,
+  notionEnabled: false,
+  notionToken: "",
+  notionDatabaseId: ""
 };
 
 const apiKeyInput = document.getElementById("apiKey");
 const targetLangSelect = document.getElementById("targetLang");
 const enabledInput = document.getElementById("enabled");
+const notionEnabledInput = document.getElementById("notionEnabled");
+const notionTokenInput = document.getElementById("notionToken");
+const notionDatabaseIdInput = document.getElementById("notionDatabaseId");
 const saveBtn = document.getElementById("saveBtn");
 const statusEl = document.getElementById("status");
 
@@ -22,13 +28,19 @@ async function loadSettings() {
   apiKeyInput.value = next.apiKey;
   targetLangSelect.value = next.targetLang;
   enabledInput.checked = Boolean(next.enabled);
+  notionEnabledInput.checked = Boolean(next.notionEnabled);
+  notionTokenInput.value = next.notionToken;
+  notionDatabaseIdInput.value = next.notionDatabaseId;
 }
 
 async function saveSettings() {
   const payload = {
     apiKey: apiKeyInput.value.trim(),
     targetLang: targetLangSelect.value,
-    enabled: enabledInput.checked
+    enabled: enabledInput.checked,
+    notionEnabled: notionEnabledInput.checked,
+    notionToken: notionTokenInput.value.trim(),
+    notionDatabaseId: notionDatabaseIdInput.value.trim()
   };
 
   await chrome.storage.sync.set(payload);

@@ -1,10 +1,19 @@
 {
   "manifest_version": 3,
   "name": "Instant Selection Translator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Translate selected text instantly to your target language.",
-  "permissions": ["storage"],
-  "host_permissions": ["https://api-free.deepl.com/*"],
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://api-free.deepl.com/*", "https://api.notion.com/*"],
+  "commands": {
+    "save-selection-to-notion": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Q",
+        "mac": "Command+Shift+Q"
+      },
+      "description": "Translate selected text and save to Notion"
+    }
+  },
   "background": {
     "service_worker": "background.js"
   },

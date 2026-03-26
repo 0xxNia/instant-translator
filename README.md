@@ -9,6 +9,7 @@ Browser extension for instant translation of selected text using DeepL API.
 - Configurable target language
 - Toggle auto-translation on/off
 - Uses DeepL API for translation quality
+- Hotkey save to Notion (`Cmd/Ctrl+Shift+Q`)
 
 ## Project Structure
 
@@ -47,11 +48,30 @@ Browser extension for instant translation of selected text using DeepL API.
 
 > Note: Current implementation uses `https://api-free.deepl.com`, intended for DeepL Free API keys.
 
+## Configure Notion Save
+
+Notion API is available on free Notion plans (with standard rate limits).
+
+1. Create a Notion integration at `https://www.notion.so/my-integrations`
+2. Copy the integration token
+3. Create (or reuse) a database with these property names:
+   - `Word` (Title)
+   - `Translation` (Text)
+   - `TargetLang` (Text)
+   - `SourceURL` (URL)
+   - `SourceTitle` (Text)
+4. Open your database page, click **Share**, and invite your integration
+5. Copy database ID from the URL and paste it in extension options
+6. Enable “save to Notion by hotkey” in options
+
 ## Usage
 
 1. Open any webpage
 2. Select text with your mouse
 3. Translation tooltip appears automatically near selection
+4. Press `Cmd/Ctrl+Shift+Q` to save selected text + translation to Notion
+
+> Note: `Cmd+Q` is a system/browser quit shortcut on macOS, so extension hotkeys cannot reliably use it.
 
 ## Security Notes
 

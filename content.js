@@ -24,6 +24,17 @@
     }
   });
 
+  chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+    if (message?.type !== "GET_SELECTION_TEXT") {
+      return false;
+    }
+
+    sendResponse({
+      text: getSelectedText()
+    });
+    return false;
+  });
+
   async function handleSelection() {
     const selectedText = getSelectedText();
 
